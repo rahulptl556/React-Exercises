@@ -6,17 +6,64 @@
 - **View Todos:** See a list of all existing tasks.
 - **Mark as Done:** Mark tasks as completed when they are done.
 
-Steps to start a project:
-i) 1st thing you do is create a backend (create folder)
-Initialise a node project ie; put package.json - this is important as it holds all the dependencies and scipts we will be using and helps developers to read it
+## Project Setup
 
--Switch to backend folder
--RUN npm init 
--Set name backend-todo
--Version - will play a imp role when we work on projects but for now select 1.0.0
--Set other few things that it asks, not imp for now
-and Enter
--INSTALL EXPRESS - npm i express
--As you install any lib or dependency, node module folder appears which hold the libraries locally. 
--IMP - When you share your code with someone or on github you dont send node modules, You package.json has all the dependencies mentioned, so when you friend run npm init, it check the package.json dependencies json like what all is mentioned and downloads all the node modules locally.  (Thats why always create a package.json 1st it help developer to understand tech used)
+### Backend
 
+1. **Create Backend Folder:**
+    ```bash
+    mkdir backend-todo
+    ```
+
+2. **Initialize Node Project:**
+    ```bash
+    cd backend-todo
+    npm init
+    ```
+
+    - Set name to `backend-todo`.
+    - Set version to `1.0.0`.
+    - Other fields are optional for now.
+
+3. **Install Express:**
+    ```bash
+    npm install express
+    ```
+
+    The `node_modules` folder will be created to hold the installed libraries locally.
+
+### Frontend (React)
+
+1. **Create Frontend Folder:**
+    ```bash
+    mkdir frontend-todo
+    ```
+
+2. **Initialize React Project:**
+    ```bash
+    cd frontend-todo
+    npx create-react-app .
+    ```
+
+    This will set up a new React project in the current directory.
+
+3. **Start the React App:**
+    ```bash
+    npm start
+    ```
+
+    Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to see the default React app.
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvement, feel free to open an issue or submit a pull request.
+
+1. Fork the repository.
+2. Create a new branch for your feature: `git checkout -b feature/new-feature`.
+3. Commit your changes: `git commit -m 'Add new feature'`.
+4. Push to the branch: `git push origin feature/new-feature`.
+5. Open a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
