@@ -3,9 +3,11 @@ const { addTodo, updateTodo } = require('./types');
 const { todo } = require('./databse');
 const app = express();
 const PORT = process.env.PORT || 3000;
+const cors = require ('cors');
 
 
 app.use(express.json());
+app.use(cors());
 
 
 app.get('/todos',async (req,res)=>{
@@ -28,7 +30,10 @@ app.post('/todo',async (req,res)=>{
     await todo.create({
         title : addPayLoad.title,
         description : addPayLoad.description,
-        completed : false
+        completed : {
+            type : Boolean,
+            default: false
+        }
     })
 
     res.json({
@@ -47,9 +52,12 @@ app.put('/completed',(req,res)=>{
         return;
     }
 
+    // You can also update by updateById feature available 
     todo.update({
+        // What do i want to update 
         _id : req.body.id
     },{
+        // What to do
         completed : true
     })
 
