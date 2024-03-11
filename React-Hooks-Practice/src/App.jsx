@@ -14,26 +14,33 @@ function App() {
     setCount(count + 1);
   }
 
-  const ans = useMemo(()=>{
-    let sum = 0;
-    for( let i=1; i<=inputValue; i++){
-      sum += i;
-    }
-    return sum;
-  },[inputValue])
+  // const ans = useMemo(()=>{
+  //   let sum = 0;
+  //   for( let i=1; i<=inputValue; i++){
+  //     sum += i;
+  //   }
+  //   return sum;
+  // },[inputValue])
 
-  function changed(e){
-    setInputValue(e.target.value);
-  }
+  // function changed(e){
+  //   setInputValue(e.target.value);
+  // }
 
   return (
     <>
+
+    <button onClick={clicked}>Count : {count}</button>
+
+    {/* useMemo  */}
+    {/* <div>
     <input id='num' type="number" placeholder='Enter a number' onChange={changed}/> <br />
 
     <div>Sum is {ans}</div>  <br />
 
     <button onClick={clicked}>Counter ({count})</button>
+    </div> */}
 
+    {/* useEffect  */}
     {/* <div>
         <button onClick={() => handleClick(1)}>1</button>
         <button onClick={() => handleClick(2)}>2</button>
