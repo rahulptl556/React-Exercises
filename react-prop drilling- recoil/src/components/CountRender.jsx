@@ -1,11 +1,14 @@
-import { useContext } from "react"
-import { MyContext } from "../context"
+import { useRecoilValue } from "recoil";
+import { countAtom } from "../store/atoms/count";
+import EvenRender from "./EvenRender";
 
 export default function CountRender(){
-    const count = useContext(MyContext);
+    const count = useRecoilValue(countAtom);
     return(
-        <div>
-            {count}
-        </div>
+            <div>
+                {count}
+                <EvenRender></EvenRender>
+            </div>
+        
     )
 }
